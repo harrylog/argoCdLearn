@@ -1,21 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata: 
+metadata:
   name: helm-app
   namespace: argocd
-spec: 
-  destination: 
+spec:
+  destination:
     namespace: helm-app
     server: "https://kubernetes.default.svc"
   project: default
-  source: 
+  source:
     path: helm-guestbook
-    repoURL: "https://github.com/mabusaa/argocd-example-apps.git"
+    repoURL: "https://github.com/harrylog/argoCdLearn"
     targetRevision: master
     helm:
-     releaseName: my-release
+      releaseName: my-release
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-
-    
