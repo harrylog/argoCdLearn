@@ -1,17 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-metadata: 
+metadata:
   name: guestbook
   namespace: argocd
-spec: 
-  destination: 
+spec:
+  destination:
     namespace: guestbook
     server: "https://kubernetes.default.svc"
   project: default
-  source: 
-    path: guestbook
-    repoURL: "https://github.com/argoCdLearn/guest.git"
-    targetRevision: master
+  source:
+    path: guest
+    repoURL: "https://github.com/harrylog/argoCdLearn"
+    targetRevision: main # or master, check your default branch
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
