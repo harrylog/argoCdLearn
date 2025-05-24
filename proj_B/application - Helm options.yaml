@@ -11,7 +11,7 @@ spec:
   source:
     path: helm-guestbook
     repoURL: "https://github.com/harrylog/argoCdLearn"
-    targetRevision: master
+    targetRevision: main
     helm:
       releaseName: my-release
   syncPolicy:
