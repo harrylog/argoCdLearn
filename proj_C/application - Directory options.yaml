@@ -9,7 +9,7 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: proj_B/helm-guestbook
+    path: proj_C
     repoURL: "https://github.com/harrylog/argoCdLearn"
     targetRevision: main
     directory:
