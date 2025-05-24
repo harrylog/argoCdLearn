@@ -13,7 +13,7 @@ spec:
     repoURL: "https://github.com/harrylog/argoCdLearn"
     targetRevision: main
     directory:
-      recurse: false
+      recurse: true
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
