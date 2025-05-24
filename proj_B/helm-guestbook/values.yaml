@@ -4,9 +4,10 @@
 
 replicaCount: 1
 
+# In proj_B/helm-guestbook/values.yaml
 image:
-  repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: 0.1
+  repository: nginx
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
