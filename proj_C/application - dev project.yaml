@@ -1,19 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: directory-app
+  name: guestbook-dev-project
   namespace: argocd
 spec: 
-  destination:
-    namespace: directory-app
+  destination: 
+    namespace: ns-1
     server: "https://kubernetes.default.svc"
-  project: default
+  project: dev-project
   source: 
     path: proj_C
     repoURL: "https://github.com/harrylog/argoCdLearn"
     targetRevision: main
-    directory:
-      recurse: true
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
