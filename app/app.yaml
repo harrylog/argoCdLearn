@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: auto-selfheal-demo
+  name: selective-sync
   namespace: argocd
-spec: 
+spec:
   destination:
-    namespace: auto-selfheal-demo
+    namespace: selective-sync
     server: "https://kubernetes.default.svc"
   project: default
   source: 
@@ -15,9 +15,8 @@ spec:
     directory:
       recurse: true
   syncPolicy:
-    automated:
-      selfHeal: true
+    automated: {}
     syncOptions:
       - CreateNamespace=true
-
+      - Replace=true
     
