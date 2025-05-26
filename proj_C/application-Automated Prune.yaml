@@ -1,17 +1,25 @@
+
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: guestbook-dev-project
+  name: auto-pruning-demo
   namespace: argocd
 spec: 
-  destination: 
-    namespace: ns-1
+  destination:
+    namespace: auto-pruning-demo
     server: "https://kubernetes.default.svc"
-  project: dev-project
+  project: default
   source: 
     path: proj_C
     repoURL: "https://github.com/harrylog/argoCdLearn"
     targetRevision: main
+    directory:
+      recurse: true
   syncPolicy:
+    automated: 
+      prune: true
     syncOptions:
       - CreateNamespace=true
+
+    
