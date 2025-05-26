@@ -9,7 +9,7 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: sproj_C
+    path: proj_C
     repoURL: "https://github.com/harrylog/argoCdLearn"
     targetRevision: main
     directory:
