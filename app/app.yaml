@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: auto-pruning-demo
+  name: auto-selfheal-demo
   namespace: argocd
 spec: 
   destination:
-    namespace: auto-pruning-demo
+    namespace: auto-selfheal-demo
     server: "https://kubernetes.default.svc"
   project: default
   source: 
@@ -15,8 +15,8 @@ spec:
     directory:
       recurse: true
   syncPolicy:
-    automated: 
-      prune: true
+    automated:
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
 
