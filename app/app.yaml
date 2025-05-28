@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: selective-sync
+  name: track-git-tag
   namespace: argocd
 spec:
   destination:
-    namespace: selective-sync
+    namespace: track-git-tag
     server: "https://kubernetes.default.svc"
   project: default
   source: 
@@ -18,5 +18,5 @@ spec:
     automated: {}
     syncOptions:
       - CreateNamespace=true
-      - Replace=true
+
     
